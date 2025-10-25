@@ -42,10 +42,10 @@ const BookDetails = () => {
 
         <div className="flex gap-2 py-4">
           <button className="bg-green-400 hover:text-green-400 hover:bg-white hover:border border-green-400 duration-500 rounded-md text-white px-6 py-2 text-center">
-            Read
+            Mark as Read
           </button>
           <button className="bg-blue-400 hover:text-blue-400 hover:bg-white hover:border border-blue-400 duration-500 rounded-md text-white px-6 py-2 text-center">
-            Wishlist
+            Add to Wishlist
           </button>
         </div>
       </div>
