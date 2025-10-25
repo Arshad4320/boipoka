@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Boi poka project setup</h1>
+      <h1 className="text-red-600 text-center">Boi poka project setup</h1>
     </div>
   );
 }
