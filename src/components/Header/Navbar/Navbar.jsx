@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className=" text-green-400 py-4 px-6">
       {/* Desktop Navbar */}
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className=" flex justify-between items-center">
         <h2 className="text-2xl font-bold">Book Vibe</h2>
 
         {/* Menu Items (Desktop) */}
