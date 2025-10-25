@@ -1,11 +1,15 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { setItemIntoDb } from "../../utility/addToDb";
 
 const BookDetails = () => {
   const { id } = useParams();
   const data = useLoaderData();
   const bookData = data?.find((book) => book?.bookId === Number(id));
-  console.log(bookData);
+
+  const handleMarksRead = (id) => {
+    setItemIntoDb(id);
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div className="flex items-center justify-center bg-gray-100 p-16">
@@ -41,7 +45,12 @@ const BookDetails = () => {
         </div>
 
         <div className="flex gap-2 py-4">
-          <button className="bg-green-400 hover:text-green-400 hover:bg-white hover:border border-green-400 duration-500 rounded-md text-white px-6 py-2 text-center">
+          <button
+            onClick={() => {
+              handleMarksRead(id);
+            }}
+            className="bg-green-400 hover:text-green-400 hover:bg-white hover:border border-green-400 duration-500 rounded-md text-white px-6 py-2 text-center"
+          >
             Mark as Read
           </button>
           <button className="bg-blue-400 hover:text-blue-400 hover:bg-white hover:border border-blue-400 duration-500 rounded-md text-white px-6 py-2 text-center">
