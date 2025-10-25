@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/bookDetails/:id",
-        loader: () => FetchableDevEnvironment("boipoka.json"),
+        loader: () => fetch("boipoka.json"),
         element: <BookDetails />,
       },
     ],

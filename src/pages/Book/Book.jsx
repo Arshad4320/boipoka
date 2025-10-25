@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router";
 
 const Book = ({ book }) => {
-  console.log(book);
   return (
-    <Link to={`/bookDetails/${book.bookId}`}>
+    <Link to={`/bookDetails/${book?.bookId}`}>
       <div className="border rounded-md">
         <div className="p-10 bg-gray-100 flex items-center justify-center">
           <img className="h-28 w-36" src={book.image} alt="" />
