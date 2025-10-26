@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
-import { setItemIntoDb } from "../../utility/addToDb";
+import { setItemIntoDb, setWishlistIntoDb } from "../../utility/addToDb";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -9,6 +9,9 @@ const BookDetails = () => {
 
   const handleMarksRead = (id) => {
     setItemIntoDb(id);
+  };
+  const handleWishlist = (id) => {
+    setWishlistIntoDb(id);
   };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -53,7 +56,10 @@ const BookDetails = () => {
           >
             Mark as Read
           </button>
-          <button className="bg-blue-400 hover:text-blue-400 hover:bg-white hover:border border-blue-400 duration-500 rounded-md text-white px-6 py-2 text-center">
+          <button
+            onClick={() => handleWishlist(id)}
+            className="bg-blue-400 hover:text-blue-400 hover:bg-white hover:border border-blue-400 duration-500 rounded-md text-white px-6 py-2 text-center"
+          >
             Add to Wishlist
           </button>
         </div>

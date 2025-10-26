@@ -17,4 +17,24 @@ const setItemIntoDb = (id) => {
     localStorage.setItem("book", strBook);
   }
 };
-export { setItemIntoDb, getItemIntoDb };
+
+const getWishlistIntoDb = () => {
+  const wishList = localStorage.getItem("wishlist");
+  if (wishList) {
+    const parseData = JSON.parse(wishList);
+    return parseData;
+  } else {
+    return [];
+  }
+};
+const setWishlistIntoDb = (id) => {
+  const parseData = getWishlistIntoDb();
+  if (parseData.includes(id)) {
+    alert("wishList id is already exits");
+  } else {
+    parseData.push(id);
+    const setData = JSON.stringify(parseData);
+    localStorage.setItem("wishlist", setData);
+  }
+};
+export { setItemIntoDb, getItemIntoDb, getWishlistIntoDb, setWishlistIntoDb };
